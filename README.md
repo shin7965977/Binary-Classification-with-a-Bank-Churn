@@ -42,7 +42,22 @@ The dataset used in this project is sourced from the [Kaggle Playground Series S
 
 ## Results
 
-The final model achieved a strong performance on the validation set, with the ROC-AUC score indicating robust predictive power. Further improvements could be explored through advanced feature engineering and additional hyperparameter tuning.
+The model's performance on the training set is summarized below:
+
+- **Accuracy:** The overall accuracy of the model is 75%, meaning that 75% of all predictions made by the model are correct.
+- **Precision:** 
+  - For class 0 (non-churned customers), the precision is 96%, indicating that when the model predicts a customer will not churn, it is correct 96% of the time.
+  - For class 1 (churned customers), the precision is 46%, meaning that when the model predicts a customer will churn, it is correct only 46% of the time.
+- **Recall:** 
+  - For class 0, the recall is 71%, showing that the model correctly identifies 71% of the non-churned customers.
+  - For class 1, the recall is 90%, indicating that the model correctly identifies 90% of the churned customers.
+- **F1-Score:** 
+  - For class 0, the F1-score is 82%, which balances precision and recall to give a single performance metric.
+  - For class 1, the F1-score is 60%, indicating that there is room for improvement in the model's ability to accurately predict churned customers.
+- **Macro Average:** The macro average F1-score is 71%, which is the average of the F1-scores for both classes, treating them equally regardless of their support.
+- **Weighted Average:** The weighted average F1-score is 77%, which takes into account the support (number of true instances for each class) when averaging.
+
+Overall, while the model is highly precise in predicting non-churned customers, it tends to misclassify many of them as churned (low recall for class 0). However, it performs well in identifying actual churned customers (high recall for class 1), though with lower precision. The model achieves a balanced performance but could benefit from further optimization, especially in improving the precision for predicting churned customers.
 
 ## Requirements
 
